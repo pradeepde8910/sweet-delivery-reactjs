@@ -1,8 +1,8 @@
 import { connect, set } from 'mongoose';
 import { UserModel } from '../models/user.model.js';
-import { FoodModel } from '../models/food.model.js';
+import { SweetModel } from '../models/sweet.model.js';
 import { sample_users } from '../data.js';
-import { sample_foods } from '../data.js';
+import { sample_sweets } from '../data.js';
 import bcrypt from 'bcryptjs';
 const PASSWORD_HASH_SALT_ROUNDS = 10;
 set('strictQuery', true);
@@ -14,7 +14,7 @@ export const dbconnect = async () => {
       useUnifiedTopology: true,
     });
     await seedUsers();
-    await seedFoods();
+    await seedSweets();
     console.log('connect successfully---');
   } catch (error) {
     console.log(error);
@@ -36,17 +36,17 @@ async function seedUsers() {
   console.log('Users seed is done!');
 }
 
-async function seedFoods() {
-  const foods = await FoodModel.countDocuments();
-  if (foods > 0) {
-    console.log('Foods seed is already done!');
+async function seedSweets() {
+  const sweets = await SweetModel.countDocuments();
+  if (sweets > 0) {
+    console.log('Sweets seed is already done!');
     return;
   }
 
-  for (const food of sample_foods) {
-    food.imageUrl = `/foods/${food.imageUrl}`;
-    await FoodModel.create(food);
+  for (const sweet of sample_sweets) {
+    sweet.imageUrl = `/sweets/${sweet.imageUrl}`;
+    await SweetModel.create(sweet);
   }
 
-  console.log('Foods seed Is Done!');
+  console.log('Sweets seed Is Done!');
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import CartPage from './pages/Cart/CartPage';
-import FoodPage from './pages/Food/FoodPage';
+import SweetPage from './pages/Sweet/SweetPage';
 import HomePage from './pages/Home/HomePage';
 import LoginPage from './pages/Login/LoginPage';
 import RegisterPage from './pages/Register/RegisterPage';
@@ -13,7 +13,7 @@ import ProfilePage from './pages/Profile/ProfilePage';
 import OrdersPage from './pages/Orders/OrdersPage';
 import Dashboard from './pages/Dashboard/Dashboard';
 import AdminRoute from './components/AdminRoute/AdminRoute';
-import FoodsAdminPage from './pages/FoodsAdmin/FoodsAdminPage';
+import SweetsAdminPage from './pages/SweetsAdmin/SweetsAdminPage';
 
 export default function AppRoutes() {
   return (
@@ -21,7 +21,7 @@ export default function AppRoutes() {
       <Route path="/" element={<HomePage />} />
       <Route path="/search/:searchTerm" element={<HomePage />} />
       <Route path="/tag/:tag" element={<HomePage />} />
-      <Route path="/food/:id" element={<FoodPage />} />
+      <Route path="/sweet/:id" element={<SweetPage />} />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
@@ -74,10 +74,10 @@ export default function AppRoutes() {
         }
       />
       <Route
-        path="/admin/foods/:searchTerm?"
+        path="/admin/sweets/:searchTerm?"
         element={
           <AdminRoute>
-            <FoodsAdminPage />
+            <SweetsAdminPage />
           </AdminRoute>
         }
       />

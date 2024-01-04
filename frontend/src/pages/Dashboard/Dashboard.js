@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useAuth } from '../../hooks/useAuth';
 import classes from './dashboard.module.css';
@@ -24,6 +25,15 @@ export default function Dashboard() {
               <h2>{item.title}</h2>
             </Link>
           ))}
+        
+        {/* Video Section */}
+        <div className={classes.videoContainer}>
+          <h2>Watch Our Latest Video</h2>
+          <video controls width="400" height="225">
+            <source src="./orders.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   );
@@ -53,9 +63,9 @@ const allItems = [
     color: 'white',
   },
   {
-    title: 'Foods',
-    imageUrl: '/icons/foods.svg',
-    url: '/admin/foods',
+    title: 'sweets',
+    imageUrl: '/icons/sweets.svg',
+    url: '/admin/sweets',
     forAdmin: true,
     bgColor: '#e040fb',
     color: 'white',

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Quicksand:wght@300&family=Work+Sans:wght@500&display=swap');
 
 * {
   box-sizing: border-box;
@@ -10,9 +10,72 @@ html {
 
 body {
   margin: 0;
-  font-family: Quicksand, sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+  background: url('homebg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
 }
+
+
 
 a {
   text-decoration: none;
+  color: #007bff;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+main {
+  padding: 2rem 0;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* Add more specific styles for other components as needed */
+
+/* Example styling for buttons */
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }

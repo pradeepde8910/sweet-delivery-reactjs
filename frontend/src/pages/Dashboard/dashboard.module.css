@@ -1,3 +1,4 @@
+
 .container {
   margin: auto;
   margin-top: 1rem;
@@ -37,4 +38,21 @@
 .menu h2 {
   font-size: 2.5rem;
   margin-right: 2rem;
+}
+
+.videoContainer {
+  margin: 1.5rem 2rem;
+  background-color: whitesmoke;
+  box-shadow: 0 0 5px 1px;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  color: #444444;
+  justify-content: space-around;
+  width: 22rem;
+  height: 11rem;
+}
+
+.videoContainer h2 {
+  font-size: 2.5rem;
 }

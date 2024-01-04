@@ -1,6 +1,6 @@
 import { model, Schema } from 'mongoose';
 import { OrderStatus } from '../constants/orderStatus.js';
-import { FoodModel } from './food.model.js';
+import { SweetModel } from './sweet.model.js';
 
 export const LatLngSchema = new Schema(
   {
@@ -14,7 +14,7 @@ export const LatLngSchema = new Schema(
 
 export const OrderItemSchema = new Schema(
   {
-    food: { type: FoodModel.schema, required: true },
+    sweet: { type: SweetModel.schema, required: true },
     price: { type: Number, required: true },
     quantity: { type: Number, required: true },
   },
@@ -24,7 +24,7 @@ export const OrderItemSchema = new Schema(
 );
 
 OrderItemSchema.pre('validate', function (next) {
-  this.price = this.food.price * this.quantity;
+  this.price = this.sweet.price * this.quantity;
   next();
 });
 

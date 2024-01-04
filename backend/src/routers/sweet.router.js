@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { FoodModel } from '../models/food.model.js';
+import { SweetModel } from '../models/sweet.model.js';
 import handler from 'express-async-handler';
 import admin from '../middleware/admin.mid.js';
 
@@ -8,17 +8,17 @@ const router = Router();
 router.get(
   '/',
   handler(async (req, res) => {
-    const foods = await FoodModel.find({});
-    res.send(foods);
+    const sweets = await SweetModel.find({});
+    res.send(sweets);
   })
 );
 
 router.delete(
-  '/:foodId',
+  '/:sweetId',
   admin,
   handler(async (req, res) => {
-    const { foodId } = req.params;
-    await FoodModel.deleteOne({ _id: foodId });
+    const { sweetId } = req.params;
+    await SweetModel.deleteOne({ _id: sweetId });
     res.send();
   })
 );
@@ -26,7 +26,7 @@ router.delete(
 router.get(
   '/tags',
   handler(async (req, res) => {
-    const tags = await FoodModel.aggregate([
+    const tags = await SweetModel.aggregate([
       {
         $unwind: '$tags',
       },
@@ -47,7 +47,7 @@ router.get(
 
     const all = {
       name: 'All',
-      count: await FoodModel.countDocuments(),
+      count: await SweetModel.countDocuments(),
     };
 
     tags.unshift(all);
@@ -62,8 +62,8 @@ router.get(
     const { searchTerm } = req.params;
     const searchRegex = new RegExp(searchTerm, 'i');
 
-    const foods = await FoodModel.find({ name: { $regex: searchRegex } });
-    res.send(foods);
+    const sweets = await SweetModel.find({ name: { $regex: searchRegex } });
+    res.send(sweets);
   })
 );
 
@@ -71,17 +71,17 @@ router.get(
   '/tag/:tag',
   handler(async (req, res) => {
     const { tag } = req.params;
-    const foods = await FoodModel.find({ tags: tag });
-    res.send(foods);
+    const sweets = await SweetModel.find({ tags: tag });
+    res.send(sweets);
   })
 );
 
 router.get(
-  '/:foodId',
+  '/:sweetId',
   handler(async (req, res) => {
-    const { foodId } = req.params;
-    const food = await FoodModel.findById(foodId);
-    res.send(food);
+    const { sweetId } = req.params;
+    const sweet = await SweetModel.findById(sweetId);
+    res.send(sweet);
   })
 );
 

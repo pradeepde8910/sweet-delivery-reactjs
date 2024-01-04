@@ -26,10 +26,10 @@ export default function OrdersPage() {
   const { filter } = useParams();
 
   useEffect(() => {
-    getAllStatus().then(status => {
+    getAllStatus().then((status) => {
       dispatch({ type: 'ALL_STATUS_FETCHED', payload: status });
     });
-    getAll(filter).then(orders => {
+    getAll(filter).then((orders) => {
       dispatch({ type: 'ORDERS_FETCHED', payload: orders });
     });
   }, [filter]);
@@ -43,7 +43,7 @@ export default function OrdersPage() {
           <Link to="/orders" className={!filter ? classes.selected : ''}>
             All
           </Link>
-          {allStatus.map(state => (
+          {allStatus.map((state) => (
             <Link
               key={state}
               className={state == filter ? classes.selected : ''}
@@ -56,14 +56,16 @@ export default function OrdersPage() {
       )}
 
       {orders?.length === 0 && (
-        <NotFound
-          linkRoute={filter ? '/orders' : '/'}
-          linkText={filter ? 'Show All' : 'Go To Home Page'}
-        />
+        <div className={classes.no_orders}>
+          <p>No orders found!</p>
+          <Link to="/thumbnails" className={classes.redirect_button}>
+            Go to Thumbnails Page
+          </Link>
+        </div>
       )}
 
       {orders &&
-        orders.map(order => (
+        orders.map((order) => (
           <div key={order.id} className={classes.order_summary}>
             <div className={classes.header}>
               <span>{order.id}</span>
@@ -73,7 +75,7 @@ export default function OrdersPage() {
               <span>{order.status}</span>
             </div>
             <div className={classes.items}>
-              {order.items.map(item => (
+              {order.items.map((item) => (
                 <Link key={item.food.id} to={`/food/${item.food.id}`}>
                   <img src={item.food.imageUrl} alt={item.food.name} />
                 </Link>

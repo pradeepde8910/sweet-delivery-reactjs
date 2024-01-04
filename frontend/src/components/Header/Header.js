@@ -1,3 +1,5 @@
+// Header.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart';
@@ -6,14 +8,13 @@ import { useAuth } from '../../hooks/useAuth';
 
 export default function Header() {
   const { user, logout } = useAuth();
-
   const { cart } = useCart();
 
   return (
     <header className={classes.header}>
       <div className={classes.container}>
         <Link to="/" className={classes.logo}>
-          Food Mine!
+          E GAMPSY - SWEET CONNECT
         </Link>
         <nav>
           <ul>

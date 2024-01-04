@@ -1,13 +1,54 @@
+/* tags.module.css */
+
 .container {
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
+  
 }
 
-.container a {
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tagsContainer a {
   background-color: #f0f0f0;
   padding: 0.3rem 1rem;
   margin: 0.2rem 0.15rem;
   border-radius: 10rem;
   font-weight: 600;
   color: blue;
+}
+
+.toggleButton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.3rem 1rem;
+  margin: 0.2rem 0.15rem;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.3rem 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown a:hover {
+  background-color: #f0f0f0;
 }
