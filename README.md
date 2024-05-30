@@ -303,3 +303,16 @@
 - [x] Update Order Router
   - [x] Add `/:status?`
   - [x] Add `/allStatus/:id`
+     
+
+
+## OUTPUT 
+![image](https://github.com/pradeepde8910/sweet-delivery-reactjs/assets/127439048/1e8378cd-12f7-4d17-afb6-a1b6eb97ad1e)
+![image](https://github.com/pradeepde8910/sweet-delivery-reactjs/assets/127439048/3bf43ccc-78f6-4aea-b78c-8c3a9bdfff4f)
+![image](https://github.com/pradeepde8910/sweet-delivery-reactjs/assets/127439048/9aa83313-b58c-4571-9ce1-e93e65304097)
+![image](https://github.com/pradeepde8910/sweet-delivery-reactjs/assets/127439048/1a09540a-119d-450e-b4cc-6a207742b19a)
+![image](https://github.com/pradeepde8910/sweet-delivery-reactjs/assets/127439048/50be7564-0375-4dbb-ab2a-71f48494dc36)
+![image](https://github.com/pradeepde8910/sweet-delivery-reactjs/assets/127439048/a6289170-9ad2-4ba5-baa4-864c24eaca80)
+![image](https://github.com/pradeepde8910/sweet-delivery-reactjs/assets/127439048/289bcf74-72bc-42c4-a72f-111aa5ffbd94)
+![image](https://github.com/pradeepde8910/sweet-delivery-reactjs/assets/127439048/8f4ae1c9-087c-4786-b3b2-0ef3e00d2b87)
+
